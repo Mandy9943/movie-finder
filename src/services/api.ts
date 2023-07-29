@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IMovie } from "types/movie.interface";
+import queryString from "query-string";
+import { IMovie, IMoviesReponse } from "types/movie.interface";
 
 const token = process.env.NEXT_PUBLIC_THEMOMOVIE_API_TOKEN;
 
@@ -17,8 +18,12 @@ export const themoMovieApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getPopularsMovies: builder.query<IMovie[], void>({
-      query: () => `/movie/popular`,
+    getPopularsMovies: builder.query<IMoviesReponse, void | { page?: number }>({
+      query: (queryOptions) =>
+        queryString.stringifyUrl({
+          url: `/movie/popular`,
+          query: queryOptions || undefined,
+        }),
     }),
     getMovie: builder.query<IMovie, string>({
       query: (movieId) => `/movie/${movieId}`,
