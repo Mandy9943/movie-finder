@@ -21,3 +21,43 @@ export interface IMoviesReponse {
   total_pages: number;
   total_results: number;
 }
+
+export interface IProductionCompany {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+}
+
+export interface IExtendedMovie extends Partial<IMovie> {
+  belongs_to_collection: {
+    id: number;
+    name: string;
+    poster_path?: string;
+    backdrop_path?: string;
+  };
+  budget: number;
+  genres: {
+    id: number;
+    name: string;
+  }[];
+  homepage: string;
+  imdb_id: string;
+
+  production_companies: IProductionCompany[];
+  production_countries: {
+    iso_3166_1: string;
+    name: string;
+  }[];
+  revenue: number;
+  runtime: number;
+  spoken_languages: {
+    english_name: string;
+    iso_639_1: string;
+    name: string;
+  }[];
+  status: string;
+  tagline: string;
+
+  genre_ids: undefined;
+}

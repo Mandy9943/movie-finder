@@ -16,6 +16,15 @@ export const movieApiconfigurations = {
       w780: "w780",
       original: "original",
     },
+    logo_sizes: {
+      w45: "w45",
+      w92: "w92",
+      w154: "w154",
+      w185: "w185",
+      w300: "w300",
+      w500: "w500",
+      original: "original",
+    },
   },
   genres: [
     {
@@ -103,3 +112,7 @@ export const backdropBaseUrl =
 export const posterBaseUrl =
   movieApiconfigurations.images.base_url +
   movieApiconfigurations.images.poster_sizes.w500;
+
+export const logoBaseUrl =
+  movieApiconfigurations.images.base_url +
+  movieApiconfigurations.images.logo_sizes.w300;
