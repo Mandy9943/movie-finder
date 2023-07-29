@@ -14,7 +14,7 @@ import MovieCard from "./components/MovieCard/MovieCard";
 
 const HomeView = () => {
   const [page, setPage] = React.useState(1);
-  const { data, error, isLoading } = useGetPopularsMoviesQuery({
+  const { data, isLoading } = useGetPopularsMoviesQuery({
     page,
   });
 
@@ -49,8 +49,8 @@ const HomeView = () => {
           </Box>
         ) : (
           <Grid container spacing={3}>
-            {movies.map((item, index) => (
-              <Grid item lg={4} sm={6} xs={12} key={index}>
+            {movies.map((item) => (
+              <Grid item lg={4} sm={6} xs={12} key={item.id}>
                 <MovieCard movie={item} />
               </Grid>
             ))}

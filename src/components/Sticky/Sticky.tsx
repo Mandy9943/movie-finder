@@ -94,6 +94,7 @@ const Sticky = ({
     }
 
     setFixed(isFixed);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -106,6 +107,7 @@ const Sticky = ({
       window.removeEventListener("scroll", scrollListener);
       window.removeEventListener("resize", scrollListener);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -115,10 +117,12 @@ const Sticky = ({
     }
 
     setParentHeight(elementRef.current?.offsetHeight || 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [elementRef.current, children]);
 
   useEffect(() => {
     if (onSticky) onSticky(fixed);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fixed]);
 
   return (
