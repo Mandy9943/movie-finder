@@ -35,19 +35,9 @@ const Header = ({ className }: HeaderProps) => {
           justifyContent: "space-between",
         }}
       >
-        <FlexBox
-          mr={2}
-          minWidth="170px"
-          alignItems="center"
-          sx={{
-            display: {
-              xs: "none",
-              md: "flex",
-            },
-          }}
-        >
+        <FlexBox mr={2} minWidth="170px" alignItems="center">
           <Link href="/" sx={{ textDecoration: "none" }}>
-            <FlexBox alignItems={"center"}>
+            <FlexBox alignItems={"center"} gap={2}>
               <Image height={55} width={55} src="/logo.jpg" alt="logo" />
               <H2>Moviefinder</H2>
             </FlexBox>

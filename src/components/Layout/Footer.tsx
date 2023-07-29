@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import FlexBox from "components/Flex/FlexBox";
 
 const Footer = () => {
@@ -10,7 +11,12 @@ const Footer = () => {
         alignItems={"center"}
         bgcolor={"white"}
       >
-        made with &#x2764; by Armando Martin
+        made with{" "}
+        <Box component={"span"} color={"red"} mx={"3px"}>
+          {" "}
+          &#x2764;
+        </Box>{" "}
+        by Armando Martin
       </FlexBox>
     </footer>
   );

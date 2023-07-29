@@ -18,7 +18,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         <Header isFixed={isFixed} />
       </Sticky>
 
-      <Box className="section-after-sticky" pb={1}>
+      <Box className="section-after-sticky" pb={1} minHeight={"70vh"}>
         {/* BODY CONTENT */}
         {children}
       </Box>
